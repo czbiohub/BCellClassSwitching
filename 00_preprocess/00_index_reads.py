@@ -1,7 +1,7 @@
 #########################################################################################
 # authors: Chris Vollmers, Felix Horns, Derek Croote
 #########################################################################################
-# index_reads.py
+# 00_index_reads.py
 # Splits reads into molecular barcode ("index") and remainder of read.
 # Assigns a unique number to each barcode.
 #########################################################################################

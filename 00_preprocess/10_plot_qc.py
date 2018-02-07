@@ -115,14 +115,14 @@ with open(infile_parsed_igblast, 'rU') as f:
 def aggregate_split_losses(infile):
     '''Concatenating losses files e.g. losses_parse_igblast.txt.{n} results in 
     tabular loss data that must be summed:
-    parse_igblast.py        parsed_igblast  6083
-    parse_igblast.py        no_hits_found   16
-    parse_igblast.py        no_CDR3_start   35
+    07_parse_igblast.py        parsed_igblast  6083
+    07_parse_igblast.py        no_hits_found   16
+    07_parse_igblast.py        no_CDR3_start   35
         etc ...
     # now it repeats for another split file
-    parse_igblast.py        parsed_igblast  6064
-    parse_igblast.py        no_hits_found   19 
-    parse_igblast.py        no_CDR3_start   25
+    07_parse_igblast.py        parsed_igblast  6064
+    07_parse_igblast.py        no_hits_found   19 
+    07_parse_igblast.py        no_CDR3_start   25
         etc...    ''' 
     losses_dict = {}
     with open(infile) as f:

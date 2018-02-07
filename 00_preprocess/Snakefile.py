@@ -9,19 +9,19 @@ ANACONDA=				RESOURCES+'/anaconda'
 SCRIPTS=				'/b1_2/home/rfhorns/scripts/igh_preprocess'
 configfile:				os.environ.get("CONFIGFILE")
 
-INDEX_READS=				SCRIPTS+'/index_reads.py'
-SPLIT_BARCODES=                         SCRIPTS+'/split_barcodes.py'
-SPLIT_FOR_DETERMINE_CONSENSUS=		SCRIPTS+'/split_for_determine.py'
-DETERMINE_CONSENSUS=			SCRIPTS+'/determine_consensus.py'
-COMBINE_IDENTICALS=			SCRIPTS+'/combine_identicals.py'
-SPLIT_SEQUENCES_ABUNDANCES=		SCRIPTS+'/split_sequences_abundances.py'
-SPLIT_SEQUENCES_QUALS=			SCRIPTS+'/split_sequences_quals.py'
-PARSE_IGBLAST=				SCRIPTS+'/parse_igblast.py'
-PARSE_ISOTYPE_BLAST=			SCRIPTS+'/parse_isotype_blast.py'
-PARSE_QUALITY_SCORES=			SCRIPTS+'/parse_sequences_quals.py'
-QC=					SCRIPTS+'/plot_qc.py'
-CLEAN=					SCRIPTS+"/clean_split.py"
-MAKE_LIB_INFO=                          SCRIPTS+"/make_lib_info.py"
+INDEX_READS=				SCRIPTS+'/00_index_reads.py'
+SPLIT_BARCODES=                         SCRIPTS+'/01_split_barcodes.py'
+SPLIT_FOR_DETERMINE_CONSENSUS=		SCRIPTS+'/02_split_for_determine.py'
+DETERMINE_CONSENSUS=			SCRIPTS+'/03_determine_consensus.py'
+COMBINE_IDENTICALS=			SCRIPTS+'/04_combine_identicals.py'
+SPLIT_SEQUENCES_ABUNDANCES=		SCRIPTS+'/05_split_sequences_abundances.py'
+SPLIT_SEQUENCES_QUALS=			SCRIPTS+'/06_split_sequences_quals.py'
+PARSE_IGBLAST=				SCRIPTS+'/07_parse_igblast.py'
+PARSE_ISOTYPE_BLAST=			SCRIPTS+'/08_parse_isotype_blast.py'
+PARSE_QUALITY_SCORES=			SCRIPTS+'/09_parse_sequences_quals.py'
+QC=					SCRIPTS+'/10_plot_qc.py'
+CLEAN=					SCRIPTS+"/11_clean_split.py"
+MAKE_LIB_INFO=                          SCRIPTS+"/12_make_lib_info.py"
 PHYLO=					SCRIPTS+'/make_read_alignment_phylogram.py'
 
 IGBLAST_DIR=				'/b1_2/home/rfhorns/resources/igblast'

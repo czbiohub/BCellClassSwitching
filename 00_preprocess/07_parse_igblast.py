@@ -153,16 +153,16 @@ def main(argv):
 
     ### Write losses to log
     with open("%s/losses_parse_igblast.txt.%s" % (output_dir,split_num), 'w') as f:
-        f.write("parse_igblast.py"+"\t"+"parsed_igblast"+"\t"+str(num_records_parsed_successfully)+"\n")
-        f.write("parse_igblast.py"+"\t"+"no_hits_found"+"\t"+str(error_counts["no_hits_found"])+"\n")
-        f.write("parse_igblast.py"+"\t"+"no_CDR3_start"+"\t"+str(error_counts["no_CDR3_start"])+"\n")
-        f.write("parse_igblast.py"+"\t"+"no_CDR3_end"+"\t"+str(error_counts["no_CDR3_end"])+"\n")
-        f.write("parse_igblast.py"+"\t"+"no_alignment_summary"+"\t"+str(error_counts["no_alignment_summary"])+"\n")
-        f.write("parse_igblast.py"+"\t"+"V_Evalue_greater_than_cutoff"+"\t"+str(error_counts["V_Evalue_greater_than_cutoff"])+"\n")
-        f.write("parse_igblast.py"+"\t"+"J_Evalue_greater_than_cutoff"+"\t"+str(error_counts["J_Evalue_greater_than_cutoff"])+"\n")
-        f.write("parse_igblast.py"+"\t"+"len_C_too_small_large"+"\t"+str(error_counts["len_C_too_small_large"])+"\n")
-        f.write("parse_igblast.py"+"\t"+"no_V_call"+"\t"+str(error_counts["no_V_call"])+"\n")
-        f.write("parse_igblast.py"+"\t"+"no_J_call"+"\t"+str(error_counts["no_J_call"])+"\n")
+        f.write("07_parse_igblast.py"+"\t"+"parsed_igblast"+"\t"+str(num_records_parsed_successfully)+"\n")
+        f.write("07_parse_igblast.py"+"\t"+"no_hits_found"+"\t"+str(error_counts["no_hits_found"])+"\n")
+        f.write("07_parse_igblast.py"+"\t"+"no_CDR3_start"+"\t"+str(error_counts["no_CDR3_start"])+"\n")
+        f.write("07_parse_igblast.py"+"\t"+"no_CDR3_end"+"\t"+str(error_counts["no_CDR3_end"])+"\n")
+        f.write("07_parse_igblast.py"+"\t"+"no_alignment_summary"+"\t"+str(error_counts["no_alignment_summary"])+"\n")
+        f.write("07_parse_igblast.py"+"\t"+"V_Evalue_greater_than_cutoff"+"\t"+str(error_counts["V_Evalue_greater_than_cutoff"])+"\n")
+        f.write("07_parse_igblast.py"+"\t"+"J_Evalue_greater_than_cutoff"+"\t"+str(error_counts["J_Evalue_greater_than_cutoff"])+"\n")
+        f.write("07_parse_igblast.py"+"\t"+"len_C_too_small_large"+"\t"+str(error_counts["len_C_too_small_large"])+"\n")
+        f.write("07_parse_igblast.py"+"\t"+"no_V_call"+"\t"+str(error_counts["no_V_call"])+"\n")
+        f.write("07_parse_igblast.py"+"\t"+"no_J_call"+"\t"+str(error_counts["no_J_call"])+"\n")
 
     ### Write seq_ids of sequences lost to each error to files
     with open("%s/seq_ids_no_hits_found.txt.%s" % (output_dir,split_num), 'w') as f:

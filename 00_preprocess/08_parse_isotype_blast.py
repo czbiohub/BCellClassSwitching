@@ -161,7 +161,7 @@ def parse_parsed_igblast(in_parsed_igblast, isotype_data, out):
 def report_errors(error_seq_ids, output_dir, split_num):
 
     with open("%s/losses_parse_isotype_blast.txt.%s" % (output_dir,split_num), 'w') as f:
-        f.write("parse_isotype_blast.py"+"\t"+"no_isotype_call"+"\t"+str(len(error_seq_ids["no_isotype_call"]))+"\n")
+        f.write("08_parse_isotype_blast.py"+"\t"+"no_isotype_call"+"\t"+str(len(error_seq_ids["no_isotype_call"]))+"\n")
 
     with open("%s/seq_ids_no_isotype_call.txt.%s" % (output_dir,split_num), 'w') as f:
         for seq_id in error_seq_ids["no_isotype_call"]:
