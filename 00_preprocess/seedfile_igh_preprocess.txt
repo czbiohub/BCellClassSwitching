@@ -1,0 +1,11 @@
+../.git/COMMIT_EDITMSG
+../.git/HEAD
+../.git/config
+../.git/description
+../.git/hooks
+../.git/index
+../.git/info
+../.git/logs
+../.git/objects
+../.git/packed-refs
+../.git/refs

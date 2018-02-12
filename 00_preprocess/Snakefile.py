@@ -3,35 +3,35 @@ import re
 import subprocess
 
 ##### Paths
-RESOURCES=				'/local10G/rfhorns/resources'
-ANACONDA=				RESOURCES+'/anaconda'
+RESOURCES=				'/Users/olgabot'
+ANACONDA=				RESOURCES+'/anaconda3'
 
-SCRIPTS=				'/b1_2/home/rfhorns/scripts/igh_preprocess'
+SCRIPTS=				'/Users/olgabot/code/BCellClassSwitching/00_preprocess'
 configfile:				os.environ.get("CONFIGFILE")
 
-INDEX_READS=				SCRIPTS+'/00_index_reads.py'
+INDEX_READS=				SCRIPTS+'/03_index_reads.py'
 SPLIT_BARCODES=                         SCRIPTS+'/01_split_barcodes.py'
-SPLIT_FOR_DETERMINE_CONSENSUS=		SCRIPTS+'/02_split_for_determine.py'
-DETERMINE_CONSENSUS=			SCRIPTS+'/03_determine_consensus.py'
-COMBINE_IDENTICALS=			SCRIPTS+'/04_combine_identicals.py'
-SPLIT_SEQUENCES_ABUNDANCES=		SCRIPTS+'/05_split_sequences_abundances.py'
-SPLIT_SEQUENCES_QUALS=			SCRIPTS+'/06_split_sequences_quals.py'
-PARSE_IGBLAST=				SCRIPTS+'/07_parse_igblast.py'
-PARSE_ISOTYPE_BLAST=			SCRIPTS+'/08_parse_isotype_blast.py'
-PARSE_QUALITY_SCORES=			SCRIPTS+'/09_parse_sequences_quals.py'
-QC=					SCRIPTS+'/10_plot_qc.py'
-CLEAN=					SCRIPTS+"/11_clean_split.py"
-MAKE_LIB_INFO=                          SCRIPTS+"/12_make_lib_info.py"
+SPLIT_FOR_DETERMINE_CONSENSUS=		SCRIPTS+'/05_split_for_determine.py'
+DETERMINE_CONSENSUS=			SCRIPTS+'/06_determine_consensus.py'
+COMBINE_IDENTICALS=			SCRIPTS+'/07_combine_identicals.py'
+SPLIT_SEQUENCES_ABUNDANCES=		SCRIPTS+'/08_split_sequences_abundances.py'
+SPLIT_SEQUENCES_QUALS=			SCRIPTS+'/09_split_sequences_quals.py'
+PARSE_IGBLAST=				SCRIPTS+'/11_parse_igblast.py'
+PARSE_ISOTYPE_BLAST=			SCRIPTS+'/13_parse_isotype_blast.py'
+PARSE_QUALITY_SCORES=			SCRIPTS+'/14_parse_sequences_quals.py'
+QC=					SCRIPTS+'/19_plot_qc.py'
+CLEAN=					SCRIPTS+"/16_clean_split.py"
+MAKE_LIB_INFO=                          SCRIPTS+"/20_make_lib_info.py"
 PHYLO=					SCRIPTS+'/make_read_alignment_phylogram.py'
 
-IGBLAST_DIR=				'/b1_2/home/rfhorns/resources/igblast'
+IGBLAST_DIR=				'/Users/olgabot/anaconda3/envs/BCellClassSwitching/'
 IGBLAST_BIN=				IGBLAST_DIR+'/ncbi-igblast-1.3.0/bin/igblastn'
 IGBLAST_GERMLINE_DB_V=			IGBLAST_DIR+'/database/Vsegments_20150201.fasta'
 IGBLAST_GERMLINE_DB_D=			IGBLAST_DIR+'/database/Dsegments_20150201.fasta'
 IGBLAST_GERMLINE_DB_J=			IGBLAST_DIR+'/database/Jsegments_20150201.fasta'
 
-BLASTN_BIN=				"/b1_2/home/rfhorns/resources/ncbi-blast-2.2.29+/bin/blastn"
-BLASTN_DB=				'/b1_2/home/rfhorns/resources/ncbi-blast-2.2.29+/db/'
+BLASTN_BIN=				"/Users/olgabot/"
+BLASTN_DB=				'/Users/olgabot/'
 
 ##### Parameters
 workdir:				config["workdir"] + "/log"
@@ -245,7 +245,7 @@ rule determine_consensus:
            python {DETERMINE_CONSENSUS} {input_on_scratch} {effective_read_length} {effective_frag_length} {frag_length_std_dev}")
     cp_from_scratch(output, scratch)
 
-rule combine_identicals:
+rule output_statistics:
   input: '{dir}/consensus_complete.txt'
   output:   '{dir}/sequences_molecule_ids.fasta',
             '{dir}/sequences_abundances.FASTA',
