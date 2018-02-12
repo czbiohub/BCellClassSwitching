@@ -9,10 +9,10 @@ ANACONDA=					RESOURCES+'/anaconda'
 SCRIPTS=					'/datastore/rfhorns/scripts/igh_makedb'
 configfile:					os.environ.get("CONFIGFILE")
 
-FILTER=                                         SCRIPTS+'/filter.py'
+FILTER=                                         SCRIPTS+'/01_filter.py'
 COLLAPSE_IDENTICAL_SEQUENCES=			config["collapse_identical_sequences_script"]
-CLEAN_UIDS=           			        SCRIPTS+'/clean_uids.py'
-MAKE_INIT_DB_INPUT=           			SCRIPTS+'/make_init_db_input.py'
+CLEAN_UIDS=           			        SCRIPTS+'/03_clean_uids.py'
+MAKE_INIT_DB_INPUT=           			SCRIPTS+'/04a_make_init_db_input.py'
 INIT_DB=					SCRIPTS+'/init_db.sh'
 
 ##### Parameters
