@@ -8,13 +8,13 @@ ANACONDA=       				RESOURCES+'/anaconda'
 SCRIPTS=                        		'/b1_2/home/rfhorns/scripts/igh_cluster'
 configfile:                                     os.environ.get("CONFIGFILE")
 
-CP_LIB_INFO=					SCRIPTS+'/cp_lib_info.py'
-FIND_GROUPS=		 			SCRIPTS+'/find_similar_V_J_CDR3_length_groups.py'
-BALANCE_LOAD=					SCRIPTS+'/balance_load.py'
-DO_CLUSTERING=                     		SCRIPTS+'/cluster_lineages.py'
-CALC_DISTANCES=					SCRIPTS+'/calc_pairwise_distances.py'
-PLOT_DISTANCES=					SCRIPTS+'/plot_distances.py'
-GET_RECORDS=					SCRIPTS+'/get_records.py'
+CP_LIB_INFO=					SCRIPTS+'/01_cp_lib_info.py'
+FIND_GROUPS=		 			SCRIPTS+'/02_find_similar_V_J_CDR3_length_groups.py'
+BALANCE_LOAD=					SCRIPTS+'/03_balance_load.py'
+DO_CLUSTERING=                     		SCRIPTS+'/04_cluster_lineages.py'
+CALC_DISTANCES=					SCRIPTS+'/07_calc_pairwise_distances.py'
+PLOT_DISTANCES=					SCRIPTS+'/10_plot_distances.py'
+GET_RECORDS=					SCRIPTS+'/06_get_records.py'
 
 ##### Parameters
 workdir:                                        config["workdir"] + "/log"
